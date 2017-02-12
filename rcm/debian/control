@@ -1,0 +1,19 @@
+Source: rcm
+Section: utils
+Priority: optional
+Maintainer: Eric Collins <eric@thoughtbot.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: http://thoughtbot.github.io/rcm
+Vcs-Git: git://github.com/thoughtbot/rcm.git
+Vcs-Browser: http://github.com/thoughtbot/rcm
+
+Package: rcm
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: management suite for dotfiles
+ You have dotfiles. Maybe you have them in a repo that you share; maybe you
+ have them in a privately-backed up directory; or maybe you just have them
+ scattered about your homedir. Regardless, this package provides a suite of
+ programs that will help manage an existing dotfiles collection and also start
+ a new one.

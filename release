@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+release_update() {
+  cd $PACKAGE
+	dch -v "${VERSION}-1" -U "New upstream release ${VERSION}"
+	dch -r "" -D unstable
+  git commit -am "Release $PACKAGE v$VERSION"
+}
+
+release_build() {
+  mkdir -p deb-build
+  wget -O deb-build/${PACKAGE}_${VERSION}.orig.tar.gz  "$(download_url)"
+  tar -C deb-build -xf deb-build/${PACKAGE}_${VERSION}.orig.tar.gz
+  cp ${PACKAGE}/debian deb-build/${PACKAGE}-${VERSION} -r
+  cd deb-build/${PACKAGE}-${VERSION}
+  debuild -F
+}
+
+release_push() {
+  git push
+}
+
+release_clean() {
+  rm -rf deb-build
+}
+
+download_url() {
+  echo "https://thoughtbot.github.io/rcm/dist/rcm-$VERSION.tar.gz"
+}
+
+verb="$1"
+PACKAGE="$2"
+VERSION="$3"
+cmd="release_${verb}"
+
+set -x
+
+${cmd}
