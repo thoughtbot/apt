@@ -1,0 +1,28 @@
+Source: gitsh
+Section: shells
+Priority: optional
+Maintainer: Eric Collins <eric@thoughtbot.com>
+Build-Depends: debhelper (>= 9),
+               pry,
+               ruby | ruby-interpreter,
+               ruby-bourne,
+               ruby-rspec,
+               ruby-parslet,
+               libc6
+               libc6,
+               readline-common
+Standards-Version: 3.9.8
+Homepage: https://github.com/thoughtbot/gitsh
+Vcs-Browser: https://github.com/thoughtbot/gitsh
+Vcs-Git: https://github.com/thoughtbot/gitsh.git
+
+Package: gitsh
+Architecture: all
+Pre-Depends: dpkg (>= 1.16.1)
+Depends: ${misc:Depends},
+         ruby | ruby-interpreter,
+         ruby-parslet,
+         libc6
+Description: interactive shell for git
+ The gitsh program is an interactive shell for git. From within gitsh you can
+ issue any git command, even using your local aliases and configuration.
