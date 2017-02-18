@@ -1,0 +1,23 @@
+Source: parity
+Section: utils
+Priority: optional
+Maintainer: Eric Collins <eric@thoughtbot.com>
+Build-Depends: bundler,
+               debhelper (>= 9),
+               gem2deb,
+               rake,
+               ruby-rspec (>= 3.3)
+Standards-Version: 3.9.8
+Vcs-Git: git://github.com/thoughtbot/parity.git
+Vcs-Browser: http://github.com/thoughtbot/parity
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: parity
+Architecture: all
+Depends: ruby | ruby-interpreter,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Shell commands for development, staging, and production parity for Heroku apps
+ Use standard convention within an application deployed to Heroku to
+ easily interact between development, staging and production apps.

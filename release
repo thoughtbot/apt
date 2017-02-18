@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+PARITY_DOWNLOAD_URL="https://github.com/thoughtbot/parity/archive"
+RCM_DOWNLOAD_URL="https://thoughtbot.github.io/rcm/dist"
+
 release_update() {
   cd $PACKAGE
 	dch -v "${VERSION}-1" -U "New upstream release ${VERSION}"
@@ -25,7 +28,14 @@ release_clean() {
 }
 
 download_url() {
-  echo "https://thoughtbot.github.io/rcm/dist/rcm-$VERSION.tar.gz"
+  case $PACKAGE in
+    "rcm"*)
+      echo "$RCM_DOWNLOAD_URL/rcm-$VERSION.tar.gz"
+      ;;
+    "parity"*)
+      echo "$PARITY_DOWNLOAD_URL/v$VERSION.tar.gz"
+      ;;
+  esac
 }
 
 verb="$1"
