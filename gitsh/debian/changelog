@@ -1,3 +1,10 @@
+gitsh (0.11.2-2) unstable; urgency=medium
+
+  * New upstream release 0.11.2
+  * Fixes install issues
+
+ -- Eric Collins <eric@thoughtbot.com>  Tue, 02 May 2017 15:17:25 -0400
+
 gitsh (0.11.2-1) unstable; urgency=medium
 
   * New upstream release 0.11.2
