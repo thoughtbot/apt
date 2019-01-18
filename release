@@ -28,6 +28,17 @@ release_clean() {
   rm -rf deb-build
 }
 
+release_reset() {
+  release_clean
+  git reset --hard origin/master
+}
+
+release_package() {
+  release_clean
+  release_update
+  release_build
+}
+
 download_url() {
   case $PACKAGE in
     "rcm"*)
