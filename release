@@ -6,8 +6,15 @@ RCM_DOWNLOAD_URL="https://thoughtbot.github.io/rcm/dist"
 
 release_update() {
   cd $PACKAGE
-	dch -v "${VERSION}-1" -U "New upstream release ${VERSION}"
-	dch -r "" -D unstable
+  current_version=`dpkg-parsechangelog --show-field Version | cut -d'-' -f1`
+
+  if [ $current_version = $VERSION ]; then
+    dch -R "New upstream release ${VERSION}"
+  else
+    dch -v "${VERSION}-1" -U "New upstream release ${VERSION}"
+  fi
+  dch -r "" -D stable
+
   git commit -am "Release $PACKAGE v$VERSION"
 }
 
