@@ -1,3 +1,9 @@
+gitsh (0.14-1) stable; urgency=medium
+
+  * New upstream release 0.14
+
+ -- Eric Collins <eric@thoughtbot.com>  Thu, 13 Jun 2019 08:28:59 -0400
+
 gitsh (0.11.2-2) unstable; urgency=medium
 
   * New upstream release 0.11.2
