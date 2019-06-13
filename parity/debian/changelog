@@ -1,3 +1,9 @@
+parity (3.2.0-1) stable; urgency=medium
+
+  * New upstream release 3.2.0
+
+ -- Eric Collins <eric@thoughtbot.com>  Thu, 13 Jun 2019 08:39:43 -0400
+
 parity (2.2.0-1) unstable; urgency=medium
 
   * New upstream release 2.2.0
