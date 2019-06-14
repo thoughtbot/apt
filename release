@@ -5,7 +5,7 @@ PARITY_DOWNLOAD_URL="https://github.com/thoughtbot/parity/archive"
 RCM_DOWNLOAD_URL="https://thoughtbot.github.io/rcm/dist"
 
 release_update() {
-  cd $PACKAGE
+  pushd $PACKAGE
   current_version=`dpkg-parsechangelog --show-field Version | cut -d'-' -f1`
 
   if [ $current_version = $VERSION ]; then
@@ -16,6 +16,7 @@ release_update() {
   dch -r "" -D stable
 
   git commit -am "Release $PACKAGE v$VERSION"
+  popd
 }
 
 release_build() {
@@ -23,8 +24,9 @@ release_build() {
   wget -O deb-build/${PACKAGE}_${VERSION}.orig.tar.gz  "$(download_url)"
   tar -C deb-build -xf deb-build/${PACKAGE}_${VERSION}.orig.tar.gz
   cp ${PACKAGE}/debian deb-build/${PACKAGE}-${VERSION} -r
-  cd deb-build/${PACKAGE}-${VERSION}
+  pushd deb-build/${PACKAGE}-${VERSION}
   debuild -F
+  popd
 }
 
 release_push() {
