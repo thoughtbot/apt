@@ -42,10 +42,21 @@ release_reset() {
   git reset --hard origin/master
 }
 
+release_upload() {
+  scp $PACKAGE_$VERSION-?_all.deb thoughtbotapt:.
+}
+
+release_sandbox() {
+  git fetch
+  git checkout -B release-$PACKAGE origin/master
+}
+
 release_package() {
+  release_sandbox
   release_clean
   release_update
   release_build
+  release_upload
 }
 
 download_url() {
