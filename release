@@ -43,7 +43,7 @@ release_reset() {
 }
 
 release_upload() {
-  scp $PACKAGE_$VERSION-?_all.deb thoughtbotapt:.
+  scp deb-build/${PACKAGE}_${VERSION}-?_all.deb thoughtbotapt:.
 }
 
 release_sandbox() {
