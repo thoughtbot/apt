@@ -59,6 +59,10 @@ release_package() {
   release_upload
 }
 
+release_check() {
+  uscan --no-download
+}
+
 download_url() {
   case $PACKAGE in
     "rcm"*)
