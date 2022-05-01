@@ -2,7 +2,7 @@
 
 GITSH_DOWNLOAD_URL="https://github.com/thoughtbot/gitsh/releases/download"
 PARITY_DOWNLOAD_URL="https://github.com/thoughtbot/parity/archive/refs/tags"
-RCM_DOWNLOAD_URL="https://github.com/thoughtbot/rcm/archive/refs/tags
+RCM_DOWNLOAD_URL="https://github.com/thoughtbot/rcm/archive/refs/tags"
 
 release_update() {
   pushd $PACKAGE
