@@ -3,6 +3,10 @@
 %:
 	dh $@
 
-build:
-	./autogen.sh
+override_dh_autoreconf:
+	dh_update_autotools_config
 	dh_autoreconf
+	./autogen.sh
+
+override_dh_auto_test:
+	make check VERBOSE=1 LOG_COMPILER=cram3
