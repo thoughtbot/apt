@@ -1,3 +1,9 @@
+parity (3.5.0-1) stable; urgency=medium
+
+  * New upstream release 3.5.0
+
+ -- Eric Collins <eric@tabfugni.cc>  Sat, 30 Apr 2022 22:35:09 -0400
+
 parity (3.3.0-1) stable; urgency=medium
 
   * New upstream release 3.3.0
