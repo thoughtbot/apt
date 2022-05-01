@@ -39,7 +39,7 @@ release_clean() {
 
 release_reset() {
   release_clean
-  git reset --hard origin/master
+  git reset --hard origin/main
 }
 
 release_upload() {
@@ -48,7 +48,7 @@ release_upload() {
 
 release_sandbox() {
   git fetch
-  git checkout -B release-$PACKAGE origin/master
+  git checkout -B release-$PACKAGE origin/main
 }
 
 release_package() {
