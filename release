@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 GITSH_DOWNLOAD_URL="https://github.com/thoughtbot/gitsh/releases/download"
-PARITY_DOWNLOAD_URL="https://github.com/thoughtbot/parity/archive"
+PARITY_DOWNLOAD_URL="https://github.com/thoughtbot/parity/archive/refs/tags"
 RCM_DOWNLOAD_URL="https://thoughtbot.github.io/rcm/dist"
 
 release_update() {
@@ -69,7 +69,7 @@ download_url() {
       echo "$RCM_DOWNLOAD_URL/rcm-$VERSION.tar.gz"
       ;;
     "parity"*)
-      echo "$PARITY_DOWNLOAD_URL/$VERSION.tar.gz"
+      echo "$PARITY_DOWNLOAD_URL/v$VERSION.tar.gz"
       ;;
     "gitsh"*)
       echo "$GITSH_DOWNLOAD_URL/v$VERSION/gitsh-$VERSION.tar.gz"
