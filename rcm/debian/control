@@ -1,8 +1,8 @@
 Source: rcm
 Section: utils
 Priority: optional
-Maintainer: Eric Collins <eric@thoughtbot.com>
-Build-Depends: debhelper (>= 9), python-cram
+Maintainer: Eric Collins <eric@tabfugni.cc>
+Build-Depends: debhelper (>= 9), python3-cram
 Standards-Version: 3.9.8
 Homepage: http://thoughtbot.github.io/rcm
 Vcs-Git: git://github.com/thoughtbot/rcm.git
